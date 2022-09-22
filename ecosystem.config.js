@@ -1,0 +1,22 @@
+// https://pm2.keymetrics.io/docs/usage/application-declaration/
+module.exports = {
+  apps: [
+    {
+      name: 'eva',
+      exec_mode: 'cluster',
+      instances: 1,
+      script: './.output/server/index.mjs',
+      env: {
+        NODE_ENV: "development",
+      },
+      env_production: {
+        NITRO_PORT: "8000",
+        NITRO_HOST: "0.0.0.0",
+        NODE_ENV: "production",
+      },
+      // watch: ["pages", "server"],
+      // watch_delay: 1000,
+      // ignore_watch: ["node_modules"],
+    }
+  ]
+}
