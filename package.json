@@ -5,9 +5,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "deploy":"git add . && git commit -am x && git push -o echoback prod master",
-    "echoback":"prisma db push",
-    "push":"git add . && git commit -am x && git push origin master",
+    "deploy": "git add . && git commit -am x && git push -o echoback prod master",
+    "echoback": "prisma db push",
+    "push": "git add . && git commit -am x && git push origin master",
     "db:init": "npx prisma migrate dev --name init",
     "postinstall": "nuxt prepare"
   },
