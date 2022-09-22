@@ -29,21 +29,21 @@ model Worker {
 }
 
 model Community {
-  id    Int      @id @default(autoincrement())
-  utime DateTime @updatedAt
-  ctime DateTime @default(now())
-  name  String
-  org   String?   @default("")
+  id      Int      @id @default(autoincrement())
+  utime   DateTime @updatedAt
+  ctime   DateTime @default(now())
+  name    String
+  org     String?  @default("")
   reviews Review[]
 }
 
 model Review {
-  id       Int      @id @default(autoincrement())
-  ctime    DateTime @default(now())
-  star     Int      @default(0)
-  worker   Worker @relation(fields: [workerId], references: [id])
-  workerId Int
+  id         Int       @id @default(autoincrement())
+  ctime      DateTime  @default(now())
+  star       Int       @default(0)
+  worker     Worker    @relation(fields: [workerId], references: [id])
+  workerId   Int
   commuity   Community @relation(fields: [commuityId], references: [id])
   commuityId Int
-  note     String?  @default("")
+  note       String?   @default("")
 }
