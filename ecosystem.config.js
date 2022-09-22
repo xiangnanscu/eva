@@ -1,4 +1,6 @@
 // https://pm2.keymetrics.io/docs/usage/application-declaration/
+require('dotenv').config()
+// console.log(process.env)
 module.exports = {
   apps: [
     {
