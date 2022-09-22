@@ -7,6 +7,7 @@
     "preview": "NITRO_PORT=3001 nuxt preview",
     "start": "pm2 start --env production",
     "stop": "pm2 stop eva",
+    "reload": "pm2 reload --update-env eva",
     "deploy": "git add . && git commit -am \"${msg:-deploy}\" && git push prod master -o build",
     "pdp": "prisma db push",
     "pmd": "prisma migrate deploy",

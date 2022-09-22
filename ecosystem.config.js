@@ -15,6 +15,7 @@ module.exports = {
         NITRO_PORT: "8000",
         NITRO_HOST: "0.0.0.0",
         NODE_ENV: "production",
+        DATABASE_URL: "postgresql://postgres:111111@localhost:5432/eva?schema=public",
       },
       // watch: ["pages", "server"],
       // watch_delay: 1000,
