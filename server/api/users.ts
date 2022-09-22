@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 export default defineEventHandler(async (event) => {
-  const users = await prisma.user.findMany({where:{id:1}})
+  // const res = await prisma.user.create({ data: { name: "kate2", sfzh: "101" } })
+  const users = await prisma.user.findMany({where:{}})
   return users
 })
