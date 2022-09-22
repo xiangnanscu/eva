@@ -9,7 +9,7 @@
     "stop": "pm2 stop eva",
     "reload": "pm2 reload --update-env eva",
     "restart": "pm2 delete eva && yarn start",
-    "deploy": "git add . && git commit -am \"${msg:-deploy}\" && git push prod master -o build -o reload",
+    "deploy": "git add . && git commit -am \"${msg:-deploy}\" && git push prod master -o build -o restart",
     "db": "prisma db push",
     "pmd": "prisma migrate deploy",
     "push": "git add . && git commit -am x && git push origin master",
