@@ -12,7 +12,7 @@ module.exports = {
       script: './.output/server/index.mjs',
       env: {
         NODE_ENV: "development",
-        XXXX: "YYYY",
+        XXXX: "YYYY@@",
       },
       env_production: {
         NITRO_PORT: "8000",
