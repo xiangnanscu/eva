@@ -1,7 +1,7 @@
 // https://pm2.keymetrics.io/docs/usage/application-declaration/
 require('dotenv').config()
 
-console.log(process.env)
+// console.log(process.env)
 
 module.exports = {
   apps: [
@@ -12,7 +12,6 @@ module.exports = {
       script: './.output/server/index.mjs',
       env: {
         NODE_ENV: "development",
-        XXXX: "YYYY@@",
       },
       env_production: {
         NITRO_PORT: "8000",
