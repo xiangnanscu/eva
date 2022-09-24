@@ -14,7 +14,7 @@
     "db:push": "prisma db push",
     "pmd": "prisma migrate deploy",
     "push": "git add . && git commit -am x && git push origin master",
-    "db:init": "npx prisma migrate dev --name init",
+    "db:init": "npx prisma migrate dev --name inits",
     "db": "prisma migrate dev",
     "postinstall": "nuxt prepare"
   },
