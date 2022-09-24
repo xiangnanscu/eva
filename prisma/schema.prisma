@@ -20,30 +20,33 @@ model User {
 }
 
 model Worker {
-  id      Int      @id @default(autoincrement())
-  utime   DateTime @updatedAt
-  ctime   DateTime @default(now())
-  sfzh    String   @unique
-  name    String
-  reviews Review[]
+  id           Int       @id @default(autoincrement())
+  utime        DateTime  @updatedAt
+  ctime        DateTime  @default(now())
+  sfzh         String    @unique
+  name         String
+  community     Community @relation(fields: [communityName], references: [name])
+  communityName String @default("天堂湖")
+  reviews      Review[]
 }
 
 model Community {
   id      Int      @id @default(autoincrement())
   utime   DateTime @updatedAt
   ctime   DateTime @default(now())
-  name    String
+  name    String   @unique @db.VarChar(50)
   org     String?  @default("")
   reviews Review[]
+  workers Worker[]
 }
 
 model Review {
-  id         Int       @id @default(autoincrement())
-  ctime      DateTime  @default(now())
-  star       Int       @default(0)
-  worker     Worker    @relation(fields: [workerId], references: [id])
-  workerId   Int
-  commuity   Community @relation(fields: [commuityId], references: [id])
-  commuityId Int
-  note       String?   @default("")
+  id           Int       @id @default(autoincrement())
+  ctime        DateTime  @default(now())
+  star         Int       @default(0)
+  worker       Worker    @relation(fields: [workerId], references: [id])
+  workerId     Int
+  community     Community @relation(fields: [communityName], references: [name])
+  communityName String
+  note         String?   @default("")
 }
