@@ -50,7 +50,6 @@ const lowRate = computed(() => rating.value <= noteRating && rating.value > 0);
 const showSubmit = computed(() => rating.value > noteRating || (lowRate.value && data.note));
 const reviewReasons = ["没解决问题", "态度不好", "速度太慢", "其他"];
 async function postReview() {
-  throw "xxxx error!";
   if (!showSubmit.value) {
     return;
   }
