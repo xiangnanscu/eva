@@ -5,7 +5,7 @@ defineEmits(["update:modelValue"]);
 
 <template>
   <div class="mb-3">
-    <label class="form-label">{{label}}</label>
+    <label v-if="label" class="form-label">{{label}}</label>
     <input class="form-control" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" />
   </div>
 
