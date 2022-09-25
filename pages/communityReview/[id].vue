@@ -11,9 +11,9 @@
           ></x-select>
           <div v-if="selected">
             <star-rating v-model:rating="rating" :show-rating="false" :inline="true" />
-            <div class="mt-2" v-if="rating > 0">
+            <h3 class="mt-2" v-if="rating > 0">
               <span class="badge bg-primary">{{ ratingMap[rating - 1] }}</span>
-            </div>
+            </h3>
             <div v-if="lowRate">
               <x-select
                 :choices="reviewReasons"
