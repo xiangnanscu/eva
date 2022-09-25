@@ -35,7 +35,7 @@ definePageMeta({
   layout: false,
 });
 useHead({
-  title: `江安党建社区评价`,
+  title: `江安社区党建`,
 });
 const route = useRoute();
 const router = useRouter();

@@ -1,8 +1,13 @@
 <template>
   <div class="container">
+    <Head>
+      <Link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    </Head>
     <nav class="navbar navbar-expand-lg bg-light mb-2">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">社区党建</a>
+        <a class="navbar-brand" href="/"
+          ><img src="/android-chrome-192x192.png" alt="打造社区党建第一品牌" width="40" height="40" />江安社区党建</a
+        >
         <button
           class="navbar-toggler"
           type="button"
