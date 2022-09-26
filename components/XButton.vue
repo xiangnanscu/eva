@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const props = defineProps<{
-  type?: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
+  kind?: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
 }>();
 const buttonClass = computed(() => {
-  return { btn: true, [`btn-${props.type || "primary"}`]: true };
+  return { btn: true, [`btn-${props.kind || "primary"}`]: true };
 });
 </script>
 

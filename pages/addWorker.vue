@@ -10,7 +10,7 @@
       <div>
         <x-select label="社区名称" v-model="communityName" :choices="comms" />
       </div>
-      <x-button type="submit" @click.prevent="createUser">提交</x-button>
+      <x-button @click.prevent="createUser">提交</x-button>
       <span>{{ message }}</span>
     </form>
   </div>
