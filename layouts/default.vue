@@ -8,17 +8,6 @@
         <a class="navbar-brand" href="/"
           ><img src="/android-chrome-192x192.png" alt="打造社区党建第一品牌" width="40" height="40" />江安社区党建</a
         >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -49,13 +38,15 @@
         </div>
       </div>
     </nav>
+    <x-alert v-if="xerror" type="danger">{{ xerror }}</x-alert>
     <slot />
   </div>
 </template>
 
 <script setup>
 const route = useRoute();
-console.log(route.path);
+const xerror = useColor();
+
 const getNavClass = (name) => {
   if (route.path.slice(1) == name) {
     return { "nav-link": true, active: true };

@@ -4,5 +4,6 @@
   </NuxtLayout>
 </template>
 <script>
-import { createApp } from 'vue'
+import { createApp } from "vue";
+
 </script>

@@ -16,6 +16,7 @@ model User {
   ctime      DateTime @default(now())
   sfzh       String   @unique
   name       String
+  password   String   @default("")
   permission Int      @default(0)
 }
 

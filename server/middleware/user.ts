@@ -7,14 +7,14 @@ const IV = "1234567812345678"; // set random initialisation vector
 
 // const phrase = "who let the dogs out";
 
-const encrypt = (val:string) => {
+const encrypt = (val: string) => {
   let cipher = crypto.createCipheriv("aes-256-cbc", ENC_KEY, IV);
   let encrypted = cipher.update(val, "utf8", "base64");
   encrypted += cipher.final("base64");
   return encrypted;
 };
 
-const decrypt = (encrypted:string) => {
+const decrypt = (encrypted: string) => {
   let decipher = crypto.createDecipheriv("aes-256-cbc", ENC_KEY, IV);
   let decrypted = decipher.update(encrypted, "base64", "utf8");
   return decrypted + decipher.final("utf8");
@@ -24,10 +24,21 @@ const decrypt = (encrypted:string) => {
 // let original_phrase = decrypt("U/63LdMBUrTS2ebqmshhD6hXl4S8ZwVKyQaY5AKsEIdlxPiW0mIj2qGn+veEyXVmLeumxuk/+MRZubxovyNjJmBjrDVkkfmTI9N6ag5BH+XvKjq4+GRcNsQ5OPcAQNdC19xEIPyxHWfjrT6Lx0k5ng==");
 
 // console.log("Decrypted content: ", original_phrase);
+const userCookieName = "user"
+const login = (event: any, user: object) => {
+  setCookie(event, userCookieName, encrypt(JSON.stringify(user)));
+};
 
+export { encrypt, decrypt, login };
 
-export { encrypt, decrypt };
-  
 export default defineEventHandler((event) => {
-  event.context.auth = { user: 123 };
+  const userCookie = getCookie(event, userCookieName);
+  if (!userCookie) {
+    return;
+  }
+  try {
+    event.context.user = JSON.parse(decrypt(userCookie));
+  } catch (error) {
+    console.log("user cookie decrypt failed:", error);
+  }
 });
