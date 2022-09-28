@@ -28,7 +28,6 @@ const userCookieName = "user"
 const login = (event: any, user: object) => {
   setCookie(event, userCookieName, encrypt(JSON.stringify(user)));
 };
-
 export { encrypt, decrypt, login };
 
 export default defineEventHandler((event) => {
@@ -38,6 +37,7 @@ export default defineEventHandler((event) => {
   }
   try {
     event.context.user = JSON.parse(decrypt(userCookie));
+    // console.log("event.context.user", event.context.user)
   } catch (error) {
     console.log("user cookie decrypt failed:", error);
   }

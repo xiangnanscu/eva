@@ -13,5 +13,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: ["auth"]
+  // or middleware: 'auth'
+})
 let users = await $fetch("/api/users")
 </script>
