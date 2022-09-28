@@ -10,7 +10,9 @@
 </template>
 
 <script setup>
-
+definePageMeta({
+  middleware: ["auth"]
+})
 let name = ref("")
 let sfzh = ref("")
 let message = ref("")

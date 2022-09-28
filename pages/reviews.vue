@@ -5,6 +5,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: ["auth"]
+})
 let reviews = await $fetch("/api/reviews");
 let reviewRows = reviews.map((e) => ({
   社区: e.communityName,

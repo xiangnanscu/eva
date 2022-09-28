@@ -31,6 +31,7 @@ const login = (event: any, user: object) => {
 export { encrypt, decrypt, login };
 
 export default defineEventHandler((event) => {
+  // console.log(event.req.url)
   const userCookie = getCookie(event, userCookieName);
   if (!userCookie) {
     return;

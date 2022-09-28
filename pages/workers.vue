@@ -8,5 +8,8 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: ["auth"]
+})
 let users = await $fetch("/api/workers")
 </script>
