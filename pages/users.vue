@@ -6,7 +6,7 @@
       </template>
     </NuxtErrorBoundary>
     <NuxtLink class="btn btn-secondary" to="/addUser">添加管理员</NuxtLink>
-    <x-table :rows="users">
+    <x-table :rows="userRows">
 
     </x-table>
   </div>
@@ -17,4 +17,8 @@ definePageMeta({
   middleware: ["auth"]
 })
 let users = await $fetch("/api/users")
+let userRows = users.map(e=>({
+  姓名:e.name,
+  身份证号: e.sfzh,
+}))
 </script>
