@@ -1,12 +1,8 @@
 <template>
   <div class="container">
-
-    <Head>
-      <Link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-    </Head>
     <nav class="navbar navbar-expand-lg bg-light mb-2">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="/android-chrome-192x192.png" alt="打造社区党建第一品牌" width="40"
+        <a class="navbar-brand" href="/"><img src="/jahy.svg" alt="打造社区党建第一品牌" width="40"
             height="40" />江安社区党建</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
