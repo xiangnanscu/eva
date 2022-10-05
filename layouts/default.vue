@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg bg-light mb-2">
       <div class="container-fluid">
         <a class="navbar-brand" href="/"><img src="/jahy.svg" alt="打造社区党建第一品牌" width="40"
-            height="40" />江安社区党建</a>
+            height="40" style="margin:0 5px"/>江安社区党建</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -60,3 +60,4 @@ const getNavClass = (name) => {
   }
 };
 </script>
+
